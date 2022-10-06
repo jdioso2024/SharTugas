@@ -1,0 +1,93 @@
+import math
+
+
+def cek_ganjil_genap(*angka):
+    angka = angka[0]
+
+    if angka % 2 == 0:
+        return('genap')
+    else:
+        return('ganjil')
+    # TODO: implementasikan fungsi ini
+
+
+def cek_tahun_kabisat(*tahun):
+    tahun = tahun[0]
+
+    if tahun % 4 == 0:
+        if tahun % 100 == 0:
+            if tahun % 400 == 0:
+                return(True)
+
+    return False
+    # TODO: implementasikan fungsi ini
+
+
+def hitung_luas_lingkaran(*jari_jari):
+    jari_jari = jari_jari[0]
+    luas_lingkaran = math.pi * (jari_jari ** 2)
+
+    return float(luas_lingkaran)
+    # TODO: implementasikan fungsi ini
+
+
+def hitung_volume_kubus(*panjang_rusuk):
+    panjang_rusuk = panjang_rusuk[0]
+    volume_kubus = panjang_rusuk ** 3
+
+    return volume_kubus
+    # TODO: implementasikan fungsi ini
+
+
+def hitung_rerata(*list_angka):
+    list_angka = list_angka[0]
+    return sum(list_angka)/len(list_angka)
+    # TODO: implementasikan fungsi ini
+
+
+def hitung_huruf_vokal(*kalimat):
+    kalimat = kalimat[0]
+    kalimat = str(kalimat)
+    kata = "AIUEOaiueo"
+    jumlahkarakter = ""
+    for x in kalimat:
+        if x in kata:
+            jumlahkarakter +=x
+    return(len(jumlahkarakter))
+    # TODO: implementasikan fungsi ini
+
+
+def cari_angka_terbesar(list_angka):
+    nilai = list_angka[0]
+    for i in list_angka:
+        if i > nilai:
+            nilai = i
+    return nilai
+    # TODO: implementasikan fungsi ini
+
+
+def cari_angka_duplikat(*list_angka):
+    list_angka = list_angka[0]
+    seen = set()
+    add_seen = seen.add
+    seen_twice = set(x for x in list_angka if x in seen or add_seen(x))
+    return list(seen_twice)
+    # TODO: implementasikan fungsi ini
+
+
+def hitung_faktorial(*angka):
+    angka = angka[0]
+    angka = int(angka)
+    if angka > 2:
+        return angka * hitung_faktorial(angka - 1)
+    return angka
+    # TODO: implementasikan fungsi ini
+
+
+def hitung_jumlah_setiap_karakter(*kata):
+    kata = kata[0]
+    freq = {}
+    for x in kata:
+        freq[x] = kata.count(x)
+    return {x: kata.count(x) for x in kata}
+    # TODO: implementasikan fungsi ini
